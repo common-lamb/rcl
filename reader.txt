@@ -1,0 +1,36 @@
+(named-readtables:in-readtable rcl::rcl)
+
+'#?R.Version()
+(RCL:R-PARSE-EVAL "R.Version()")
+#?R.Version()
+((:|nickname| "World-Famous Astronaut")
+ (:|version.string| "R version 3.2.1 (2015-06-18)") (:|language| "R")
+ (:|svn rev| "68531") (:|day| "18") (:|month| "06") (:|year| "2015")
+ (:|minor| "2.1") (:|major| "3") (:|status| "")
+ (:|system| "x86_64, darwin13.4.0") (:|os| "darwin13.4.0") (:|arch| "x86_64")
+ (:|platform| "x86_64-apple-darwin13.4.0"))
+
+'#?%R.Version()
+(RCL:R%-PARSE-EVAL "R.Version()")
+#?%R.Version()
+#<RCL::R-POINTER :GENERIC-VECTOR #.(SB-SYS:INT-SAP #X06144E98) {1006E5EE13}>
+
+(length #?| dir() |#)
+397
+
+'[ a b [c :d e 'f]]
+(R "a" B (R "c" :|d| E '|f|))
+
+'[R.Version]
+(R "R.Version")
+
+[R.Version]
+((:|nickname| "World-Famous Astronaut")
+ (:|version.string| "R version 3.2.1 (2015-06-18)") (:|language| "R")
+ (:|svn rev| "68531") (:|day| "18") (:|month| "06") (:|year| "2015")
+ (:|minor| "2.1") (:|major| "3") (:|status| "")
+ (:|system| "x86_64, darwin13.4.0") (:|os| "darwin13.4.0") (:|arch| "x86_64")
+ (:|platform| "x86_64-apple-darwin13.4.0"))
+
+'[+ 1 [+ 2 3]]
+(RCL:R "+" 1 (RCL:R% "+" 2 3))

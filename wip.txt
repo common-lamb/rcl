@@ -1,0 +1,13 @@
+
+
+(more or less) OK:
+[_lm (r%-parse-eval "Fertility ~ .") :Data 'swiss]
+(r "plot" *)
+[_print [_summary [_lm (r%-parse-eval "Fertility ~ .") :Data 'swiss]]]
+NOT OK:
+[_lm [_~ 'Fertility '.] :Data 'swiss] 
+
+
+R> [\[ '("a" "b" "c" "d" "e" "f") '(3 5)]
+("c" "e")
+
